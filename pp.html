@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Formulario Completo</title>
+  <link rel="stylesheet" type="text/css" href="css/pp.css">
+  <script src="javsc/pp.js"></script>
+</head>
+
+<body>
+
+  <div class="container">
+    <div>
+      <h1 class="badge">Formulario </h1>
+      <div>
+        <form action="4.php" method="GET">
+
+          <button class="ke" type="submit">crear planilla</button>
+        </form>
+      </div>
+      <form name="miFormulario" action="bdconex.php" method="POST" onsubmit="return validarFormulario()">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="telefono">Telefono:</label>
+        <input type="tel" id="telefono" name="telefono" pattern="[0-9]{10}" required>
+
+        <label for="mensaje">Mensaje:</label>
+        <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+
+        <input type="submit" value="Enviar">
+
+
+      </form>
+
+    </div>
+    <!--para pedir todo los datos-->
+    <div>
+      <h2 class="badge">Ver todos los datos</h2>
+      <form action="2.php" method="POST">
+
+        <button class="ke" type="submit">ver</button>
+
+      </form>
+    </div>
+    <!--para pedir todo los datos segun emal-->
+    <div>
+      <h2 class="badge ">Mostrar datos por correo electronico</h2>
+      <form action="3.php" method="GET">
+        <label for="email">Ingrese su correo electronico:</label>
+        <input type="email" name="email" id="email" required>
+        <button class="ke" type="submit">Buscar</button>
+      </form>
+    </div>
+    <div id="resultado"> </div>
+  </div>
+</body>
+
+</html>
